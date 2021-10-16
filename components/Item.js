@@ -8,7 +8,7 @@ function Item(props) {
         </div>
 
         <div className="">
-          <div calssName="">
+          <div className="">
             <Image
               src="/bg-flag.png"
               alt="bul"
