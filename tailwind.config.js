@@ -8,15 +8,6 @@ module.exports = {
         'hero-pattern': "url('/img/background.png')",
       },
     },
-    borderWidth: {
-      DEFAULT: '1px',
-      0: '0',
-      2: '2px',
-      3: '3px',
-      4: '4px',
-      6: '6px',
-      8: '8px',
-    },
     flex: {
       1: '1 1 0%',
       auto: '1 1 auto',
@@ -24,7 +15,18 @@ module.exports = {
       inherit: 'inherit',
       none: 'none',
       2: '2 2 0%',
-      3: '1 0 0',
+      old: '1 0 0',
+    },
+
+    screens: {
+      xxs: '360px',
+      sm: '576px',
+      md: '768px',
+      lg: '992px',
+      xl: '1280px',
+      '2xl': '1536px',
+
+      // => @media (min-width: 640px) { ... }
     },
   },
   variants: {

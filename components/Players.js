@@ -12,8 +12,8 @@ export default function Players() {
       className="bg-white rounded-2xl  mt-4  border-gray-200 \
      border w-11/12 m-auto max-w-4xl "
     >
-      <div className="flex-row flex-wrap">
-        <div className="p-2 relative w-full">
+      <div className="">
+        <div className="p-2 w-full">
           {Player.map((item) => (
             <Item key={`${item.id}`} {...item} />
           ))}
