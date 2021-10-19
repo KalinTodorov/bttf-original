@@ -9,8 +9,8 @@ import {
 function Header() {
   const button_style =
     'border-gray-200 border bg-white text-black font-bold \
-    py-4 px-4 rounded-md text-sm w-full h-13\
-    sm:text-base flex-row ';
+    py-2 px-2 rounded-md text-sm w-full h-13 \
+     sm:text-base block  ';
   return (
     <div className="w-11/12 m-auto max-w-4xl min-h-full">
       {/* heading  */}
@@ -35,25 +35,24 @@ function Header() {
         {/* menu */}
       </div>
 
-      <div className="flex justify-between items-center space-x-1 sm:space-x-2 ">
+      <div className="flex justify-between  items-center space-x-1 sm:space-x-2 ">
         <button className={button_style}>
-          <div className="flex  items-center w-10 h-10  text-center justify-center">
-            <UsersIcon />
+          <div className="w-10 h-10 ml-auto mr-auto">
+            <UsersIcon className="" />
           </div>
           <span className="invisible xxs:visible">Състезатели</span>
         </button>
 
         <button className={button_style}>
-          <div className="w-10 h-10">
-            <ChartBarIcon />
-          </div>
-          Състезания
+          <ChartBarIcon className="w-10 h-10 ml-auto mr-auto " />
+
+          <span className="invisible xxs:visible">Състезания</span>
         </button>
         <button className={button_style}>
-          <div className="w-10 h-10">
+          <div className="w-10 h-10 m-auto">
             <HomeIcon />
           </div>
-          Клубове
+          <span className="invisible xxs:visible">Клубове</span>
         </button>
       </div>
     </div>

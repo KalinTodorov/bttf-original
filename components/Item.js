@@ -8,8 +8,8 @@ import {
 function Item(props) {
   return (
     <li
-      className="bg-gray-200  p-1 mb-2 rounded-md  text-sm  hover:h-14 hover:border-2 \
-    hover:border-gray-500 hover:text-base h-12 list-none "
+      className=" bg-gray-100 hover:bg-gray-300 p-1 mb-2 rounded-md  text-base  hover:border-2 \
+    hover:border-gray-500  h-16 list-none "
     >
       <div className="flex mx-1 rounded-md vertical ">
         {/* First row  */}
@@ -17,7 +17,7 @@ function Item(props) {
           <span> {1}</span>
         </div>
         {/* Second row  */}
-        <div className="">
+        <div className=" items-stretch cursor-pointer">
           <div className="">
             <Image
               src="/bg-flag.png"
@@ -31,20 +31,20 @@ function Item(props) {
               {props.name} {props.lastName}
             </span>
           </div>
-          <div>
+          <div className="grid text-left align-middle">
             <span className="text-red-600">{props.rating} Rating</span>
           </div>
         </div>
         {/*  Third Row  */}
-        <div className="flex-1 grid cursor-pointer text-right align-middle">
+        <div className="flex-1 grid cursor-pointer text-right ">
           <div className="">
-            <span className="xss:invisible visible mr-4 ">Профил</span>
+            <span className="invisible xs:visible mr-4 ">Профил</span>
             <div className="h-4 w-4 inline-block">
               <UsersIcon />
             </div>
           </div>
           <div>
-            <span className="hide-mobile mr-4 mb-4">Детайли</span>
+            <span className="invisible xs:visible  mr-4 mb-4">Детайли</span>
             <div className="h-4 w-4 inline-block text-green-800">
               <ChartBarIcon />
             </div>
