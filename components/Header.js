@@ -16,13 +16,15 @@ function Header() {
       {/* heading  */}
       <div className=" p-3.5 flex m-auto justify-between items-center ">
         {/* left */}
-        <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-3xl shadow-lg">
-          <Image src="/logo.png" layout="fill" objectFit="contain" />
-        </div>
+        <Link href="/">
+          <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-3xl shadow-lg">
+            <Image src="/logo.png" layout="fill" objectFit="contain" />
+          </div>
+        </Link>
 
         {/* midle */}
         <div className="">
-          <h1 className=" font-bold   sm:text-2xl xs:text-lg xxs:text-sm text-md  ">
+          <h1 className=" font-bold   sm:text-2xl xs:text-lg xxs:text-md text-md  ">
             БФТМ - Ранкинг
           </h1>
         </div>
@@ -36,24 +38,31 @@ function Header() {
       </div>
 
       <div className="flex justify-between  items-center space-x-1 sm:space-x-2 ">
-        <button className={button_style}>
-          <div className="w-10 h-10 ml-auto mr-auto">
-            <UsersIcon className="" />
-          </div>
-          <span className="invisible xxs:visible">Състезатели</span>
-        </button>
+        <Link href="/">
+          <button className={button_style}>
+            <div className="w-8 h-8 ml-auto mr-auto">
+              <UsersIcon className="" />
+            </div>
 
-        <button className={button_style}>
-          <ChartBarIcon className="w-10 h-10 ml-auto mr-auto " />
+            <span className="invisible xxs:visible">Състезатели</span>
+          </button>
+        </Link>
+        <Link href="/tournaments">
+          <button className={button_style}>
+            <ChartBarIcon className="w-8 h-8 ml-auto mr-auto " />
 
-          <span className="invisible xxs:visible">Състезания</span>
-        </button>
-        <button className={button_style}>
-          <div className="w-10 h-10 m-auto">
-            <HomeIcon />
-          </div>
-          <span className="invisible xxs:visible">Клубове</span>
-        </button>
+            <span className="invisible xxs:visible">Състезания</span>
+          </button>
+        </Link>
+        <Link href="/clubs">
+          <button className={button_style}>
+            <div className="w-8 h-8 m-auto">
+              <HomeIcon />
+            </div>
+
+            <span className="invisible xxs:visible">Клубове</span>
+          </button>
+        </Link>
       </div>
     </div>
   );

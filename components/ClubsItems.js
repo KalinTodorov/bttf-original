@@ -36,16 +36,16 @@ function Item(props) {
           </div>
         </div>
         {/*  Third Row  */}
-        <div className="flex-1 grid cursor-pointer text-right ">
+        <div className="flex-1 cursor-pointer text-right ">
           <div className="">
             <span className="invisible xs:visible mr-4 ">Профил</span>
-            <div className="h-4 w-4 inline-block">
+            <div className="h-5 w-5  inline-block">
               <UsersIcon />
             </div>
           </div>
           <div>
             <span className="invisible xs:visible  mr-4 mb-4">Детайли</span>
-            <div className="h-4 w-4 inline-block text-green-800">
+            <div className="h-5 w-5 inline-block text-green-800">
               <ChartBarIcon />
             </div>
           </div>

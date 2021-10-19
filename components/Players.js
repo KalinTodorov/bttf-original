@@ -1,4 +1,4 @@
-import Item from './Item';
+import Item from './PlayersItems';
 
 export default function Players() {
   const Player = [

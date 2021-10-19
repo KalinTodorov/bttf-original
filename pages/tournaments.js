@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Header from '../components/Header';
-import Clubs from '../components/Clubs';
+import Tournaments from '../components/Tournaments';
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         <Header />
 
         {/* {Main} */}
-        <Clubs />
+        <Tournaments />
 
         <h1>this is the tabletennisbuild</h1>
       </div>
