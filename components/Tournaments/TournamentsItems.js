@@ -2,7 +2,7 @@ import Image from 'next/image';
 import {
   ChartBarIcon,
   HomeIcon,
-  IdentificationIcon,
+  UserGroupIcon,
   UsersIcon,
 } from '@heroicons/react/solid';
 function Item(props) {
@@ -13,32 +13,27 @@ function Item(props) {
     >
       <div className="flex mx-1 rounded-md vertical ">
         {/* First row  */}
-        <div className="mr-2 mt-1">
-          <span> {1}</span>
-        </div>
-        {/* Second row  */}
-        <div className=" items-stretch cursor-pointer mt-1">
+        <div className=" items-stretch cursor-pointer mt-1 ml-2">
           <div className="">
             <Image
               src="/bg-flag.png"
               alt="bul"
               width="20px"
               height="15px"
-              className="shadow-md ml-1"
-            />
-            <span className="mr-1  text-sm col text-gray-600">BUL</span>
-            <span>
-              {props.name} {props.lastName}
-            </span>
+              className="shadow-3xl ml-1 mr-1 inline"
+            />{' '}
+            <span>{props.name}</span>
           </div>
           <div className="text-left">
-            <span className="text-red-600">{props.rating} Rating</span>
+            <span className="text-gray-600">
+              {props.date}, {props.city}
+            </span>
           </div>
         </div>
         {/*  Third Row  */}
         <div className="flex-1 cursor-pointer text-right ">
           <div className="">
-            <span className="hidden xxs:inline-block mr-3 ">Профил</span>
+            <span className="hidden xxs:inline-block mr-3 ">Срещи</span>
             <div className="h-5 w-5  inline-block text-gray-800 pt-1">
               <UsersIcon />
             </div>

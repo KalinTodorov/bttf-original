@@ -3,10 +3,30 @@ import Item from './TournamentsItems';
 import { useState, useEffect } from 'react';
 export default function Players() {
   const Player = [
-    { name: 'Калин', lastName: 'Тодорв', rating: 2500, id: 23 },
-    { name: 'Ивелин', lastName: 'Величков', rating: 1800, id: 43 },
-    { name: 'Станимир', lastName: 'Славов', rating: 1210, id: 43 },
-    { name: 'Истанал', lastName: 'Мирослав', rating: 1500, id: 43 },
+    {
+      name: 'Млад Олимпиец до 18г.',
+      city: 'Пловдив',
+      rating: 2500,
+      date: '4 Май 2022',
+    },
+    {
+      name: 'Млад Олимпиец до 15г.',
+      rating: 1800,
+      city: 'Пловдив',
+      date: '4 Май 2021',
+    },
+    {
+      name: 'Републиканско първенство до 21г.',
+      rating: 1210,
+      city: 'Пловдив',
+      date: '4 Май 2020',
+    },
+    {
+      name: 'Държавно Индивидуално Първенство',
+      city: 'Пловдив',
+      rating: 1500,
+      date: '4 Май 2020',
+    },
   ];
   const [PlayerFilters, setPlayerFilters] = useState({
     leagueUpper: 2500,

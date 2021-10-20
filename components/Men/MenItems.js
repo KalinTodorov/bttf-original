@@ -4,6 +4,7 @@ import {
   HomeIcon,
   IdentificationIcon,
   UsersIcon,
+  TrendingUpIcon,
 } from '@heroicons/react/solid';
 function Item(props) {
   return (
@@ -26,13 +27,17 @@ function Item(props) {
               height="15px"
               className="shadow-md ml-1"
             />
-            <span className="mr-1  text-sm col text-gray-600">BUL</span>
+            <span className="mr-1  font-light text-sm col text-gray-600">
+              BUL
+            </span>
             <span>
               {props.name} {props.lastName}
             </span>
           </div>
           <div className="text-left">
-            <span className="text-red-600">{props.rating} Rating</span>
+            <span className="text-red-500 font-medium">
+              {props.rating} Rating
+            </span>
           </div>
         </div>
         {/*  Third Row  */}
@@ -44,9 +49,9 @@ function Item(props) {
             </div>
           </div>
           <div>
-            <span className="hidden xxs:inline-block   mr-3 mb-4">Детайли</span>
+            <span className="hidden  xxs:inline-block mr-3 mb-4">Детайли</span>
             <div className="h-5 w-5 inline-block text-green-800 pt-1">
-              <ChartBarIcon />
+              <TrendingUpIcon />
             </div>
           </div>
         </div>
