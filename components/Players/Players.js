@@ -21,7 +21,10 @@ export default function Players() {
     >
       {/* Player Filters */}
       <div className="flex flex-wrap relative ">
-        <div className="rounded-md p-4 inline-table table-fixed bg-gray-100 ml-3 mt-3 w-filter">
+        <div
+          className="rounded-md p-4 inline-table table-fixed bg-gray-100 m-3 sm:w-filter \
+        w-full"
+        >
           <div className="table-cell ">
             <div className="relative m-2 bg-white rounded-md">
               <select
@@ -38,7 +41,7 @@ export default function Players() {
           </div>
         </div>
 
-        <div className="rounded-md p-4 inline-table table-fixed bg-gray-100 ml-3 mt-3 w-filter">
+        <div className="sm:w-filter rounded-md p-4 m-3 mt-0 sm:mt-3 inline-table table-fixed bg-gray-100 ml-3 w-full">
           <div className="flex justify-around">
             <button
               type="button"

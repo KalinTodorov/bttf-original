@@ -16,7 +16,7 @@ module.exports = {
         1: '1',
       },
       width: {
-        filter: 'calc(50% - 15px);',
+        filter: 'calc(48% - 15px);',
       },
     },
     flex: {
