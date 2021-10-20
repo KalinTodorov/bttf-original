@@ -43,13 +43,13 @@ function Item(props) {
         {/*  Third Row  */}
         <div className="flex-1 cursor-pointer text-right ">
           <div className="">
-            <span className="hidden xxs:inline-block mr-3 ">Профил</span>
+            <span className="hidden sm:inline-block mr-3 ">Профил</span>
             <div className="h-5 w-5  inline-block text-gray-800 pt-1">
               <UsersIcon />
             </div>
           </div>
           <div>
-            <span className="hidden  xxs:inline-block mr-3 mb-4">Детайли</span>
+            <span className="hidden  sm:inline-block mr-3 mb-4">Детайли</span>
             <div className="h-5 w-5 inline-block text-green-800 pt-1">
               <TrendingUpIcon />
             </div>
