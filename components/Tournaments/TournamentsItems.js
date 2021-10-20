@@ -8,8 +8,8 @@ import {
 function Item(props) {
   return (
     <li
-      className=" bg-gray-100 hover:bg-gray-300 p-1 mb-2 rounded-md  text-base  hover:border-2 \
-    hover:border-gray-500  h-16 list-none "
+      className=" bg-gray-100 hover:bg-gray-300 p-1 mb-2 rounded-md  text-base  \
+    hover:border-gray-400 border border-gray-200  h-16 list-none "
     >
       <div className="flex mx-1 rounded-md vertical ">
         {/* First row  */}
@@ -39,7 +39,7 @@ function Item(props) {
         <div className="flex-1 cursor-pointer text-right ">
           <div className="">
             <span className="hidden xxs:inline-block mr-3 ">Профил</span>
-            <div className="h-5 w-5  inline-block pt-1">
+            <div className="h-5 w-5  inline-block text-gray-800 pt-1">
               <UsersIcon />
             </div>
           </div>

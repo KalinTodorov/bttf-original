@@ -9,14 +9,12 @@ module.exports = {
       },
       spacing: {
         18: '4.5rem',
-        84: '21rem',
-        96: '24rem',
       },
       zIndex: {
         1: '1',
       },
       width: {
-        filter: 'calc(45.8333% - 10px);',
+        filter: 'calc(50% - 10px);',
       },
     },
     flex: {

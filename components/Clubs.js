@@ -10,7 +10,7 @@ export default function Players() {
   return (
     <div
       className="bg-white rounded-2xl  mt-4  border-gray-200 \
-     border w-11/12 m-auto max-w-4xl "
+     border w-11/12 m-auto max-w-5xl "
     >
       <div className="">
         <div className="p-2 w-full">
