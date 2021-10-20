@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Header from '../components/Header';
-import Players from '../components/Players';
+import Players from '../components/Players/Players';
 
 export default function Home() {
   return (

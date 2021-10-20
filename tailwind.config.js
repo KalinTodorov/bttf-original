@@ -7,6 +7,17 @@ module.exports = {
       backgroundImage: {
         'hero-pattern': "url('/img/background.png')",
       },
+      spacing: {
+        18: '4.5rem',
+        84: '21rem',
+        96: '24rem',
+      },
+      zIndex: {
+        1: '1',
+      },
+      width: {
+        filter: 'calc(50% - 15px);',
+      },
     },
     flex: {
       1: '1 1 0%',

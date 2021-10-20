@@ -13,11 +13,11 @@ function Item(props) {
     >
       <div className="flex mx-1 rounded-md vertical ">
         {/* First row  */}
-        <div className="mr-2">
+        <div className="mr-2 mt-1">
           <span> {1}</span>
         </div>
         {/* Second row  */}
-        <div className=" items-stretch cursor-pointer">
+        <div className=" items-stretch cursor-pointer mt-1">
           <div className="">
             <Image
               src="/bg-flag.png"
@@ -31,21 +31,21 @@ function Item(props) {
               {props.name} {props.lastName}
             </span>
           </div>
-          <div className="grid text-left align-middle">
+          <div className="text-left">
             <span className="text-red-600">{props.rating} Rating</span>
           </div>
         </div>
         {/*  Third Row  */}
         <div className="flex-1 cursor-pointer text-right ">
           <div className="">
-            <span className="invisible xs:visible mr-4 ">Профил</span>
-            <div className="h-5 w-5  inline-block">
+            <span className="hidden xxs:inline-block mr-3 ">Профил</span>
+            <div className="h-5 w-5  inline-block pt-1">
               <UsersIcon />
             </div>
           </div>
           <div>
-            <span className="invisible xs:visible  mr-4 mb-4">Детайли</span>
-            <div className="h-5 w-5 inline-block text-green-800">
+            <span className="hidden xxs:inline-block   mr-3 mb-4">Детайли</span>
+            <div className="h-5 w-5 inline-block text-green-800 pt-1">
               <ChartBarIcon />
             </div>
           </div>

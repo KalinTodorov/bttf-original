@@ -17,7 +17,7 @@ function Header() {
       <div className=" p-3.5 flex m-auto justify-between items-center ">
         {/* left */}
         <Link href="/">
-          <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-3xl shadow-lg">
+          <div className="relative w-18 h-18 md:w-20 md:h-20 rounded-3xl shadow-lg">
             <Image src="/logo.png" layout="fill" objectFit="contain" />
           </div>
         </Link>
@@ -30,7 +30,7 @@ function Header() {
         </div>
 
         {/* right */}
-        <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-xl border border-grey-200 bg-white shadow-sm">
+        <div className="relative w-18 h-18 md:w-20 md:h-20 rounded-xl border border-grey-200 bg-white shadow-sm">
           <Image src="/ittf.png" layout="fill" objectFit="contain" />
         </div>
 
@@ -44,14 +44,14 @@ function Header() {
               <UsersIcon className="" />
             </div>
 
-            <span className="invisible xxs:visible">Състезатели</span>
+            <span className="hidden xxs:block">Състезатели</span>
           </button>
         </Link>
         <Link href="/tournaments">
           <button className={button_style}>
             <ChartBarIcon className="w-8 h-8 ml-auto mr-auto " />
 
-            <span className="invisible xxs:visible">Състезания</span>
+            <span className="hidden xxs:block">Състезания</span>
           </button>
         </Link>
         <Link href="/clubs">
@@ -60,7 +60,7 @@ function Header() {
               <HomeIcon />
             </div>
 
-            <span className="invisible xxs:visible">Клубове</span>
+            <span className="hidden xxs:block">Клубове</span>
           </button>
         </Link>
       </div>
