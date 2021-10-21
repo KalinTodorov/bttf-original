@@ -21,7 +21,7 @@ export default function Players() {
 
       <div
         className="bg-white rounded-2xl  mt-4  border-gray-200 \
-     border w-11/12 m-auto max-w-5xl "
+     border w-body m-auto max-w-5xl "
       >
         <div className="flex flex-wrap relative justify-center space-x-0 md:space-x-2 mr-2 md:mr-0 md:ml-0 ml-2  m-auto sm:max-w-5xl">
           <div

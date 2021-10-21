@@ -27,7 +27,7 @@ function Header(props) {
     }
   }
   return (
-    <div className="w-11/12 m-auto max-w-5xl min-h-full">
+    <div className="w-body m-auto max-w-5xl">
       {/* heading  */}
       <div className=" p-3.5 flex m-auto justify-between items-center ">
         {/* left */}

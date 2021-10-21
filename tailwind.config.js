@@ -15,6 +15,7 @@ module.exports = {
       },
       width: {
         filter: 'calc(50% - 10px);',
+        body: '98%',
       },
     },
     flex: {
