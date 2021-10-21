@@ -29,11 +29,14 @@ export default function Players() {
          inline-table table-fixed bg-gray-100   w-full border p-4 mt-2 "
           >
             <div className="flex justify-around">
-              <div className="w-28 h-10 bg-white border border-gray-200  text-lg rounded-md ">
+              <div
+                className="w-28 h-10  border border-gray-300  text-lg
+               rounded-md bg-gradient-to-t from-gray-300 shadow-sm"
+              >
                 <Link href="/men">
                   <button
                     type="button"
-                    className="w-full h-full   text-lg leading-4 border-red-400 border-b-2  "
+                    className="w-full h-full   text-lg leading-4  "
                   >
                     Мъже
                   </button>
@@ -44,7 +47,7 @@ export default function Players() {
                 <Link href="/women">
                   <button
                     type="button"
-                    className="w-full h-full   text-lg leading-4 border-white border-b-2 hover:border-red-300"
+                    className="w-full h-full   text-lg leading-4 hover:from-gray-100  hover:bg-gradient-to-t"
                   >
                     Жени
                   </button>
@@ -60,7 +63,7 @@ export default function Players() {
             <div className="table-cell ">
               <div className="relative bg-white rounded-md">
                 <select
-                  className="relative z-1 rounded-t-lg w-full border-b-2 h-10 border-red-400 \
+                  className="relative z-1 rounded-t-lg w-full border-b-2 h-10 border-gray-400 \
               before:z-0 block focus:border-0"
                 >
                   <option value="0">Всички Състезатели</option>
@@ -73,7 +76,10 @@ export default function Players() {
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap relative justify-center space-x-0 md:space-x-2 mr-2 md:mr-0 md:ml-0 ml-2 m-auto sm:max-w-5xl">
+        <div
+          className="flex flex-wrap relative justify-center space-x-0
+         md:space-x-2 mr-2 md:mr-0 md:ml-0 ml-2 m-auto sm:max-w-5xl"
+        >
           <div
             className="border-gray-200 border rounded-md p-4 inline-table table-fixed
           bg-gray-100 mt-2 md:w-filter w-full"
@@ -86,7 +92,7 @@ export default function Players() {
                 <input
                   type="text"
                   placeholder="(Име)"
-                  className="relative z-1 rounded-t-lg w-full border-b-2 h-10 border-red-400 \
+                  className="relative z-1 rounded-t-lg w-full border-b-2 h-10 border-gray-400 \
                 before:z-0 block focus:border-0"
                 />
                 <div
@@ -111,7 +117,7 @@ export default function Players() {
                     type="text"
                     value=""
                     placeholder="(Клуб)"
-                    className="relative z-1 rounded-t-lg w-full border-b-2 h-10 border-red-400 \
+                    className="relative z-1 rounded-t-lg w-full border-b-2 h-10 border-gray-400 \
                   before:z-0 block focus:border-0"
                   />
                 </div>

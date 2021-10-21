@@ -8,14 +8,13 @@ import {
 } from '@heroicons/react/solid';
 function Header(props) {
   const button_style =
-    'border-gray-200 border bg-white text-black font-bold \
+    'border-gray-200 border   text-black font-bold \
     py-2 px-2 rounded-md text-sm w-full h-13 \
-     sm:text-base block  ';
+     sm:text-base block shadow-sm';
 
   // nav bar option css
-  const active = 'border-red-400 border-b-2 ';
-  const unactive =
-    'border-white border-b-2 hover:border-red-300 hover:border-b-2';
+  const active = 'bg-gradient-to-t from-gray-200 shadow-md  border-gray-300';
+  const unactive = 'hover:bg-gradient-to-t  hover:from-gray-100';
   let buttons = [];
   if (props.menuSelection) {
     for (let i = 1; i < 4; i++) {
@@ -54,35 +53,31 @@ function Header(props) {
 
       <div className="flex justify-between  items-center space-x-1 sm:space-x-2 ">
         <Link href="/men">
-          <div className={`${buttons[0]} w-full`}>
-            <button className={button_style}>
-              <div className="w-8 h-8 ml-auto mr-auto text-gray-700 ">
-                <UsersIcon className="" />
-              </div>
+          <button className={`${button_style} ${buttons[0]}`}>
+            <div className="w-8 h-8 ml-auto mr-auto text-gray-700">
+              <UsersIcon className="" />
+            </div>
 
-              <span className="hidden xxs:block font-body2">Състезатели</span>
-            </button>
-          </div>
+            <span className="hidden xxs:block font-body2">Състезатели</span>
+          </button>
         </Link>
         <Link href="/tournaments">
-          <div className={`${buttons[1]} w-full`}>
-            <button className={button_style}>
-              <ChartBarIcon className="w-8 h-8 ml-auto mr-auto text-gray-700" />
+          <button className={`${button_style} ${buttons[1]}`}>
+            <div className="w-8 h-8 ml-auto mr-auto text-gray-700">
+              <ChartBarIcon className="" />
+            </div>
 
-              <span className="hidden xxs:block font-body2">Състезания</span>
-            </button>
-          </div>
+            <span className="hidden xxs:block font-body2">Състезания</span>
+          </button>
         </Link>
         <Link href="/clubs">
-          <div className={`${buttons[2]} w-full`}>
-            <button className={button_style}>
-              <div className="w-8 h-8 m-auto text-gray-700">
-                <HomeIcon />
-              </div>
+          <button className={`${button_style} ${buttons[2]}`}>
+            <div className="w-8 h-8 ml-auto mr-auto text-gray-700">
+              <HomeIcon className="" />
+            </div>
 
-              <span className="hidden xxs:block font-body2">Клубове</span>
-            </button>
-          </div>
+            <span className="hidden xxs:block font-body2">Клубове</span>
+          </button>
         </Link>
       </div>
     </div>
