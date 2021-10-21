@@ -39,11 +39,14 @@ export default function Players() {
                 </button>
               </Link>
 
-              <div className="w-28 h-10 bg-white border border-gray-300  text-lg rounded-md ">
+              <div
+                className="w-28 h-10  border border-gray-300  text-lg
+               rounded-md bg-gradient-to-t from-gray-300 shadow-sm "
+              >
                 <Link href="/women">
                   <button
                     type="button"
-                    className="w-28 h-10 text-lg leading-4 bg-gradient-to-t from-gray-300 shadow-md"
+                    className="w-full h-full   text-lg leading-4"
                   >
                     Жени
                   </button>
@@ -59,7 +62,7 @@ export default function Players() {
             <div className="table-cell ">
               <div className="relative bg-white rounded-md">
                 <select
-                  className="relative z-1 rounded-t-lg w-full border-b-2 h-10 border-red-400 \
+                  className="relative z-1 rounded-t-lg w-full border-b-2 h-10 border-gray-400 \
               before:z-0 block focus:border-0"
                 >
                   <option value="0">Всички Състезатели</option>
@@ -85,7 +88,7 @@ export default function Players() {
                 <input
                   type="text"
                   placeholder="(Име)"
-                  className="relative z-1 rounded-t-lg w-full border-b-2 h-10 border-red-400 \
+                  className="relative z-1 rounded-t-lg w-full border-b-2 h-10 border-gray-400 \
                 before:z-0 block focus:border-0"
                 />
                 <div
@@ -110,7 +113,7 @@ export default function Players() {
                     type="text"
                     value=""
                     placeholder="(Клуб)"
-                    className="relative z-1 rounded-t-lg w-full border-b-2  h-10 border-red-400 \
+                    className="relative z-1 rounded-t-lg w-full border-b-2  h-10 border-gray-400 \
                   before:z-0 block focus:border-0"
                   />
                 </div>
