@@ -119,7 +119,7 @@ export default function Players() {
             <div className="table-cell ">
               <div className="relative bg-white rounded-md pd-1">
                 <select
-                  className="p-1 relative rounded-lg w-full  h-12  \
+                  className="p-1 bg-white relative rounded-lg w-full  h-12  \
               before:z-0 block  border border-gray-200 focus:outline-none focus:border-gray-400
               focus:border-2 focus:ring-2 focus:ring-gray-200 "
                 >
