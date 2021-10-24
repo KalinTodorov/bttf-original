@@ -2,7 +2,6 @@ import Head from 'next/head';
 import { useState } from 'react';
 import Header from '../components/Header';
 import Women from '../components/Women/Women';
-
 export default function Home() {
   const menuSelection = 1;
   const [startDate, setStartDate] = useState(new Date());

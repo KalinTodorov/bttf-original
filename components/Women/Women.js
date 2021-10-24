@@ -33,7 +33,7 @@ export default function Players() {
                 <button
                   type="button"
                   className="w-28 h-10 bg-white border border-gray-200  text-lg rounded-md 
-                   leading-4  border-b-2 hover:bg-gradient-to-t hover:from-gray-200 hover:shadow-sm "
+                   leading-4   hover:bg-gradient-to-t hover:from-gray-200 hover:shadow-sm "
                 >
                   Мъже
                 </button>

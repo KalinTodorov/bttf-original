@@ -21,8 +21,6 @@ export default function Home() {
 
         {/* {Main} */}
         <Men />
-
-        <h1>this is the tabletennisbuild</h1>
       </div>
     </div>
   );

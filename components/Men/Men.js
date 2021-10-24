@@ -1,19 +1,64 @@
 import Item from './MenItems';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { db } from '../../firebase';
+import { collection, doc, getDoc } from '@firebase/firestore';
 export default function Players() {
-  const Men = [
-    { name: 'Калин', lastName: 'Тодорв', rating: 2500, id: 23 },
-    { name: 'Ивелин', lastName: 'Величков', rating: 1800, id: 43 },
-    { name: 'Станимир', lastName: 'Славов', rating: 1210, id: 43 },
-    { name: 'Истанал', lastName: 'Мирослав', rating: 1500, id: 43 },
-  ];
-  const [PlayerFilters, setPlayerFilters] = useState({
-    leagueUpper: 2500,
-    leagueLower: 1000,
-    name: '',
-    city: '',
-  });
+  const [men, setMen] = useState([]);
+  const [filteredMen, setFilteredMen] = useState([]);
+  const [activePage, setActivePage] = useState(0);
+
+  const fetchPlayers = async () => {
+    const docRef = doc(db, 'players', 'men');
+    const docSnap = await getDoc(docRef);
+    // setMen(data);
+    if (docSnap.exists()) {
+      console.log('Document data:', docSnap.data());
+      let data = docSnap.data();
+      data = data.all;
+      console.log(data);
+
+      setMen([...data]);
+      setFilteredMen([...data]);
+    } else {
+      // doc.data() will be undefined in this case
+      console.log('No such document!');
+    }
+  };
+  useEffect(() => {
+    fetchPlayers();
+    console.log(men);
+  }, []);
+  const resultsPerPage = 1;
+  let numOfPages = Math.ceil(filteredMen.length / resultsPerPage);
+  let items = [];
+
+  for (let number = 0; number < 3; number++) {
+    let isItemActive;
+    if (activePage === number)
+      isItemActive =
+        'justify-center items-center w-3/12 flex flex-colmn pointer\
+    border border-gray-200 rounded-md bg-red-300 text-gray-50 font-bold';
+    else {
+      isItemActive =
+        'text-center flex flex-colmn w-3/12 justify-center items-center pointer\
+      border border-gray-300 rounded-md  bg-white text-gray-700';
+    }
+
+    const handlePaginationChange = () => {
+      setActivePage(number);
+    };
+
+    items.push(
+      <li
+        className={isItemActive}
+        key={number}
+        onClick={handlePaginationChange}
+      >
+        <a>{number}</a>
+      </li>
+    );
+  }
 
   return (
     <>
@@ -129,10 +174,32 @@ export default function Players() {
         {/* Map Players*/}
         <div className="">
           <div className="p-2 w-full">
-            {Men.map((item) => (
-              <Item key={`${item.id}`} {...item} />
-            ))}
+            {men
+              .sort(function (a, b) {
+                return b.rating - a.rating;
+              })
+              .map((item) => (
+                <Item key={`${item.id}`} {...item} />
+              ))}
           </div>
+        </div>
+
+        {/* Paginator */}
+        <div className="block sm:flex border m-2 -mt-2 rounded-md bg-gray-100 h-auto p-2 items-center flex-grow-0">
+          <div className="flex justify-center sm:justify-end">
+            <span>
+              От{' '}
+              {filteredMen.length > resultsPerPage
+                ? resultsPerPage
+                : filteredMen.length}{' '}
+              от общо {filteredMen.length} състезатели.
+            </span>
+          </div>
+          <nav className="flex-grow items-center  ">
+            <ul className="list-none flex-grow flex relative h-11 justify-center sm:justify-end mr-2 ">
+              {items}
+            </ul>
+          </nav>
         </div>
       </div>
     </>

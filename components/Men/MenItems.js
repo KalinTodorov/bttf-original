@@ -31,12 +31,12 @@ function Item(props) {
               BUL
             </span>
             <span>
-              {props.name} {props.lastName}
+              {props?.name} {props?.lastName}
             </span>
           </div>
           <div className="text-left">
             <span className="text-red-500 font-medium">
-              {props.rating} Rating
+              {props?.rating} Rating
             </span>
           </div>
         </div>
