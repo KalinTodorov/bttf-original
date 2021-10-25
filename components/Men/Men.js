@@ -5,10 +5,8 @@ import { db } from '../../firebase';
 import { collection, doc, getDoc } from '@firebase/firestore';
 import {
   SearchIcon,
-  SearchCircleIcon,
-  IdentificationIcon,
-  UsersIcon,
-  TrendingUpIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
 } from '@heroicons/react/outline';
 export default function Players() {
   const [men, setMen] = useState([]);
@@ -40,15 +38,34 @@ export default function Players() {
   let numOfPages = Math.ceil(filteredMen.length / resultsPerPage);
   let items = [];
 
+  const LowerPage = () => {
+    if (activePage !== 0) {
+      setActivePage(activePage - 1);
+    }
+  };
+  const HigherPage = () => {
+    if (activePage !== 10) {
+      setActivePage(activePage + 1);
+    }
+  };
+  items.push(
+    <li
+      className="text-center flex flex-colmn w-3/12 justify-center items-center cursor-pointer\
+    border border-gray-300 rounded-md  bg-white text-gray-700"
+      onClick={LowerPage}
+    >
+      <ArrowLeftIcon className="w-4" />
+    </li>
+  );
   for (let number = 0; number < 3; number++) {
     let isItemActive;
     if (activePage === number)
       isItemActive =
         'justify-center items-center w-3/12 flex flex-colmn pointer\
-    border border-gray-200 rounded-md bg-red-300 text-gray-50 font-bold';
+    border border-gray-200 rounded-md bg-gradient-to-t from-gray-400 text-black  ';
     else {
       isItemActive =
-        'text-center flex flex-colmn w-3/12 justify-center items-center pointer\
+        'text-center flex flex-colmn w-3/12 justify-center items-center cursor-pointer\
       border border-gray-300 rounded-md  bg-white text-gray-700';
     }
 
@@ -66,6 +83,15 @@ export default function Players() {
       </li>
     );
   }
+  items.push(
+    <li
+      className="text-center flex flex-colmn w-3/12 justify-center items-center cursor-pointer\
+    border border-gray-300 rounded-md  bg-white text-gray-700"
+      onClick={HigherPage}
+    >
+      <ArrowRightIcon className="w-4" />
+    </li>
+  );
 
   return (
     <>
@@ -117,11 +143,11 @@ export default function Players() {
           bg-gray-100 mt-2 md:w-filter w-full "
           >
             <div className="table-cell ">
-              <div className="relative bg-white rounded-md pd-1">
+              <div className="relative  rounded-md pd-1 h-12">
                 <select
-                  className="p-1 bg-white relative rounded-lg w-full  h-12  \
+                  className="p-1  relative rounded-lg w-full  h-full bg-gradient-to-t from-gray-300 \
               before:z-0 block  border border-gray-200 focus:outline-none focus:border-gray-400
-              focus:border-2 focus:ring-2 focus:ring-gray-200 "
+              focus:border-2 focus:ring-2 focus:ring-gray-200  "
                 >
                   <option value="0">Всички Състезатели</option>
                   <option value="2050">Супер Лига</option>
@@ -150,8 +176,8 @@ export default function Players() {
               <input
                 type="text"
                 placeholder="(Име)"
-                className="  w-full h-full pl-8 rounded-md bg-white block
-                 pb-1  border border-gray-200 focus:outline-none focus:border-gray-400
+                className="  w-full h-full pl-8 rounded-md bg-white block text-md sm:text-base
+                  border border-gray-200 focus:outline-none focus:border-gray-400
                  focus:border-2 focus:ring-2 focus:ring-gray-200"
               />
             </div>
@@ -168,8 +194,8 @@ export default function Players() {
               <input
                 type="text"
                 placeholder="(Клуб)"
-                className="  w-full h-full pl-8 rounded-md bg-white block
-                 pb-1  border border-gray-200 focus:outline-none focus:border-gray-400
+                className="  w-full h-full pl-8 rounded-md bg-white block text-md sm:text-base
+                   border border-gray-200 focus:outline-none focus:border-gray-400
                  focus:border-2 focus:ring-2 focus:ring-gray-200"
               />
             </div>
@@ -200,7 +226,7 @@ export default function Players() {
               от общо {filteredMen.length} състезатели.
             </span>
           </div>
-          <nav className="flex-grow items-center  ">
+          <nav className="flex-grow items-center ml-2 sm:ml-4  ">
             <ul className="list-none flex-grow flex relative h-11 justify-center sm:justify-end mr-2 ">
               {items}
             </ul>
