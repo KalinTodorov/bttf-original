@@ -62,7 +62,7 @@ export default function Players() {
     if (activePage === number)
       isItemActive =
         'justify-center items-center w-3/12 flex flex-colmn pointer\
-    border border-gray-200 rounded-md bg-gradient-to-t from-gray-400 text-black  ';
+    border border-gray-200 rounded-md bg-gradient-to-t from-gray-300 text-black  ';
     else {
       isItemActive =
         'text-center flex flex-colmn w-3/12 justify-center items-center cursor-pointer\
@@ -95,30 +95,29 @@ export default function Players() {
 
   return (
     <>
-      {/* filter 1 and 2 */}
-
       <div
-        className="bg-white rounded-2xl  mt-4  border-gray-200 \
+        className="bg-white rounded-2xl  mt-2  border-gray-200 \
      border w-body m-auto max-w-5xl "
       >
-        {/* filter by sex */}
+        {/* filter 1 and 2 */}
         <div
-          className="flex flex-wrap relative justify-center space-x-0 md:space-x-2 
-        mr-2 md:mr-0 md:ml-0 ml-2  m-auto sm:max-w-5xl"
+          className="flex flex-wrap relative justify-center space-x-0 md:space-x-1
+        mr-1 md:mr-0 md:ml-0 ml-1  m-auto sm:max-w-5xl"
         >
+          {/* filter by sex */}
           <div
-            className=" md:w-filter rounded-md  \
-         inline-table table-fixed bg-gray-100   w-full border p-4 mt-2 "
+            className=" md:w-filter rounded-lg \
+         inline-table table-fixed bg-gray-100   w-full border p-4 mt-1 "
           >
             <div className="flex justify-around">
               <div
                 className="w-28 h-10  border border-gray-300  text-lg
-               rounded-md bg-gradient-to-t from-gray-300 shadow-sm"
+               rounded-md bg-gradient-to-t from-gray-300 to-gray-200 shadow-sm"
               >
                 <Link href="/men">
                   <button
                     type="button"
-                    className="w-full h-full   text-lg leading-4  "
+                    className="w-full h-full   text-lg leading-4 font-semibold "
                   >
                     Мъже
                   </button>
@@ -140,14 +139,15 @@ export default function Players() {
           {/* filter by league */}
           <div
             className="border-gray-200 border rounded-md p-4 inline-table table-fixed
-          bg-gray-100 mt-2 md:w-filter w-full "
+          bg-gray-100 mt-1 md:w-filter w-full "
           >
             <div className="table-cell ">
-              <div className="relative  rounded-md pd-1 h-12">
+              <div className="relative  rounded-md  h-12 ">
                 <select
-                  className="p-1  relative rounded-lg w-full  h-full bg-gradient-to-t from-gray-300 \
-              before:z-0 block  border border-gray-200 focus:outline-none focus:border-gray-400
-              focus:border-2 focus:ring-2 focus:ring-gray-200  "
+                  className="p-1  relative rounded-lg w-full  h-full  \
+               block  border border-gray-300 focus:outline-none focus:border-gray-400
+              focus:border-2 focus:ring-2 focus:ring-gray-200 bg-gradient-to-t from-gray-300
+              to-gray-200 shadow-md font-semibold"
                 >
                   <option value="0">Всички Състезатели</option>
                   <option value="2050">Супер Лига</option>
@@ -162,12 +162,12 @@ export default function Players() {
         {/* filter 3 and 4 */}
         <div
           className="flex flex-wrap relative justify-center space-x-0
-         md:space-x-2 mr-2 md:mr-0 md:ml-0 ml-2 m-auto sm:max-w-5xl"
+         md:space-x-1 mr-1 md:mr-0 md:ml-0 ml-1 m-auto sm:max-w-5xl"
         >
           {/*filter by name */}
           <div
             className="border-gray-200 border rounded-md p-4 inline-table table-fixed
-          bg-gray-100 mt-2 md:w-filter w-full"
+          bg-gray-100 mt-1 md:w-filter w-full"
           >
             <div className="relative rounded-sm  p-1 h-12">
               <div className=" absolute inset-y-0 fl-3 flex items-center pointer-events-none">
@@ -178,14 +178,14 @@ export default function Players() {
                 placeholder="(Име)"
                 className="  w-full h-full pl-8 rounded-md bg-white block text-md sm:text-base
                   border border-gray-200 focus:outline-none focus:border-gray-400
-                 focus:border-2 focus:ring-2 focus:ring-gray-200"
+                 focus:border-2 focus:ring-2 focus:ring-gray-200 font-semibold"
               />
             </div>
           </div>
 
           <div
             className="border-gray-200 border rounded-md p-4 inline-table table-fixed
-          bg-gray-100 mt-2 md:w-filter w-full"
+          bg-gray-100 mt-1 md:w-filter w-full"
           >
             <div className="relative rounded-sm  p-1 h-12">
               <div className=" absolute inset-y-0 fl-3 flex items-center pointer-events-none">
@@ -196,7 +196,7 @@ export default function Players() {
                 placeholder="(Клуб)"
                 className="  w-full h-full pl-8 rounded-md bg-white block text-md sm:text-base
                    border border-gray-200 focus:outline-none focus:border-gray-400
-                 focus:border-2 focus:ring-2 focus:ring-gray-200"
+                 focus:border-2 focus:ring-2 focus:ring-gray-200 font-semibold"
               />
             </div>
           </div>
@@ -204,7 +204,7 @@ export default function Players() {
 
         {/* Map Players*/}
         <div className="">
-          <div className="p-2 w-full">
+          <div className="p-1 w-full">
             {men
               .sort(function (a, b) {
                 return b.rating - a.rating;
@@ -216,7 +216,7 @@ export default function Players() {
         </div>
 
         {/* Paginator */}
-        <div className="block sm:flex border m-2 -mt-2 rounded-md bg-gray-100 h-auto p-2 items-center flex-grow-0">
+        <div className="block sm:flex border m-1 -mt-1 rounded-md bg-gray-100 h-auto p-2 items-center flex-grow-0">
           <div className="flex justify-center sm:justify-end">
             <span>
               От{' '}
@@ -227,7 +227,7 @@ export default function Players() {
             </span>
           </div>
           <nav className="flex-grow items-center ml-2 sm:ml-4  ">
-            <ul className="list-none flex-grow flex relative h-11 justify-center sm:justify-end mr-2 ">
+            <ul className="list-none flex-grow flex relative h-11 justify-center sm:justify-end mr-2 font-semibold">
               {items}
             </ul>
           </nav>

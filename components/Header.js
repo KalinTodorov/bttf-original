@@ -13,8 +13,9 @@ function Header(props) {
      sm:text-base block shadow-sm';
 
   // nav bar option css
-  const active = 'bg-gradient-to-t from-gray-200 shadow-md  border-gray-300';
-  const unactive = 'hover:bg-gradient-to-t  hover:from-gray-100';
+  const active =
+    'bg-gradient-to-t from-gray-300 to-gray-200 shadow-md  border-gray-300 font-bold';
+  const unactive = 'hover:bg-gradient-to-t  hover:from-gray-100 font-semibold';
   let buttons = [];
   if (props.menuSelection) {
     for (let i = 1; i < 4; i++) {
@@ -51,14 +52,14 @@ function Header(props) {
         {/* menu */}
       </div>
 
-      <div className="flex justify-between  items-center space-x-1 sm:space-x-2 ">
+      <div className="flex justify-between  items-center space-x-1 sm:space-x-2 font-bold">
         <Link href="/men">
           <button className={`${button_style} ${buttons[0]}`}>
             <div className="w-8 h-8 ml-auto mr-auto text-gray-700">
               <UsersIcon className="" />
             </div>
 
-            <span className="hidden xxs:block font-body2">Състезатели</span>
+            <span className="hidden xxs:block ">Състезатели</span>
           </button>
         </Link>
         <Link href="/tournaments">
@@ -67,7 +68,7 @@ function Header(props) {
               <ChartBarIcon className="" />
             </div>
 
-            <span className="hidden xxs:block font-body2">Състезания</span>
+            <span className="hidden xxs:block ">Състезания</span>
           </button>
         </Link>
         <Link href="/clubs">
@@ -76,7 +77,7 @@ function Header(props) {
               <HomeIcon className="" />
             </div>
 
-            <span className="hidden xxs:block font-body2">Клубове</span>
+            <span className="hidden xxs:block ">Клубове</span>
           </button>
         </Link>
       </div>

@@ -9,7 +9,7 @@ import {
 function Item(props) {
   return (
     <li
-      className=" bg-gray-100 hover:bg-gray-300 p-1 mb-2 rounded-md  text-base  \
+      className=" bg-gray-100 hover:bg-gray-300 p-1 mb-1 rounded-md  text-base  \
     hover:border-gray-400 border border-gray-200  h-16 list-none "
     >
       <div className="flex mx-1 rounded-md vertical ">
