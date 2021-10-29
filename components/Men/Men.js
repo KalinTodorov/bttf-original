@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { db } from '../../firebase';
 import { collection, doc, getDoc } from '@firebase/firestore';
+import DotLoader from 'react-spinners/DotLoader';
 import {
   SearchIcon,
   ArrowLeftIcon,
@@ -12,6 +13,7 @@ export default function Players() {
   const [men, setMen] = useState([]);
   const [filteredMen, setFilteredMen] = useState([]);
   const [activePage, setActivePage] = useState(0);
+  const [loader, setLoader] = useState(false);
 
   const fetchPlayers = async () => {
     const docRef = doc(db, 'players', 'men');
@@ -29,6 +31,7 @@ export default function Players() {
       // doc.data() will be undefined in this case
       console.log('No such document!');
     }
+    setLoader(true);
   };
   useEffect(() => {
     fetchPlayers();
@@ -50,8 +53,8 @@ export default function Players() {
   };
   items.push(
     <li
-      className="text-center flex flex-colmn w-3/12 justify-center items-center cursor-pointer\
-    border border-gray-300 rounded-md  bg-white text-gray-700"
+      className=" flex flex-colmn w-1/12 h-10 justify-center items-center cursor-pointer\
+    border border-gray-300 rounded-full mr-2  bg-white text-gray-700"
       onClick={LowerPage}
     >
       <ArrowLeftIcon className="w-4" />
@@ -85,8 +88,8 @@ export default function Players() {
   }
   items.push(
     <li
-      className="text-center flex flex-colmn w-3/12 justify-center items-center cursor-pointer\
-    border border-gray-300 rounded-md  bg-white text-gray-700"
+      className="text-center flex flex-colmn w-1/12 ml-2 h-10 justify-center items-center cursor-pointer\
+    border border-gray-300 rounded-full  bg-white text-gray-700"
       onClick={HigherPage}
     >
       <ArrowRightIcon className="w-4" />
@@ -106,6 +109,33 @@ export default function Players() {
         >
           {/* filter by sex */}
           <div
+            className="md:w-filter rounded-lg \
+           bg-gray-100   w-full border p-4 mt-1 flex"
+          >
+            <input
+              type="checkbox"
+              id="toggle"
+              name="toggle"
+              value="is_on"
+              className="toggle ainput"
+            ></input>
+            <label for="toggle" class="toy-toggle toggle">
+              <span class="border1"></span>
+              <span class="border2"></span>
+              <span class="border3"></span>
+
+              <span class="handle">
+                <span class="handle-off">
+                  <h1 className="ml-20 mt-3 text-lg font-semibold">Мъже</h1>
+                </span>
+                <span class="handle-on">
+                  <h1 className=" -ml-28 mt-3 text-lg font-semibold">Жени</h1>
+                </span>
+              </span>
+            </label>
+          </div>
+
+          {/* <div
             className=" md:w-filter rounded-lg \
          inline-table table-fixed bg-gray-100   w-full border p-4 mt-1 "
           >
@@ -135,7 +165,7 @@ export default function Players() {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* filter by league */}
           <div
             className="border-gray-200 border rounded-md p-4 inline-table table-fixed
@@ -162,7 +192,7 @@ export default function Players() {
         {/* filter 3 and 4 */}
         <div
           className="flex flex-wrap relative justify-center space-x-0
-         md:space-x-1 mr-1 md:mr-0 md:ml-0 ml-1 m-auto sm:max-w-5xl"
+         md:space-x-1  md:-mx-0 ml-1  sm:max-w-5xl"
         >
           {/*filter by name */}
           <div
@@ -185,7 +215,7 @@ export default function Players() {
 
           <div
             className="border-gray-200 border rounded-md p-4 inline-table table-fixed
-          bg-gray-100 mt-1 md:w-filter w-full"
+          bg-gray-100 mt-1 md:w-filter w-full "
           >
             <div className="relative rounded-sm  p-1 h-12">
               <div className=" absolute inset-y-0 fl-3 flex items-center pointer-events-none">
@@ -203,20 +233,34 @@ export default function Players() {
         </div>
 
         {/* Map Players*/}
-        <div className="">
-          <div className="p-1 w-full">
-            {men
-              .sort(function (a, b) {
-                return b.rating - a.rating;
-              })
-              .map((item) => (
-                <Item key={`${item.id}`} {...item} />
-              ))}
+        <div className="container">
+          <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
           </div>
+          <h1 className="spinner-text">Зареждане...</h1>
         </div>
+        {/* {!loader ? (
+          <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+          </div>
+        ) : (
+          <div className="">
+            <div className="p-1 w-full">
+              {men
+                .sort(function (a, b) {
+                  return b.rating - a.rating;
+                })
+                .map((item) => (
+                  <Item key={`${item.id}`} {...item} />
+                ))}
+            </div>
+          </div>
+        )} */}
 
         {/* Paginator */}
-        <div className="block sm:flex border m-1 -mt-1 rounded-md bg-gray-100 h-auto p-2 items-center flex-grow-0">
+        {/* <div className="block sm:flex border m-1 -mt-1 rounded-md bg-gray-100 h-auto p-2 items-center flex-grow-0">
           <div className="flex justify-center sm:justify-end">
             <span>
               От{' '}
@@ -231,7 +275,7 @@ export default function Players() {
               {items}
             </ul>
           </nav>
-        </div>
+        </div> */}
       </div>
     </>
   );
