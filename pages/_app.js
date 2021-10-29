@@ -1,6 +1,7 @@
 import 'tailwindcss/tailwind.css';
 import { SessionProvider } from 'next-auth/react';
 import '../styles/loader.css';
+import '../styles/loader2.css';
 import '../styles/toggle.css';
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (

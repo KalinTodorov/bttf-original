@@ -8,9 +8,9 @@
   background: linear-gradient(#fff, #ccc);
   display: flex;
   height: 100px;
-  --on: #88e661;
-  --off: #f0f0f0;
-  --transDur: 1s;
+  --on: #bdbdbd;
+  --off: #ffffff;
+  --transDur: 0.7s;
 }
 .ainput {
   position: fixed;

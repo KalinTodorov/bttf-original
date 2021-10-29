@@ -240,6 +240,7 @@ export default function Players() {
           </div>
           <h1 className="spinner-text">Зареждане...</h1>
         </div>
+
         {/* {!loader ? (
           <div class="spinner">
             <div class="dot1"></div>
